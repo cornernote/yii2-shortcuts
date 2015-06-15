@@ -1,6 +1,6 @@
 {
     "name": "cornernote/yii2-shortcuts",
-    "description": "Shortcuts for Yii2",
+    "description": "SHelper class with shortcuts for Yii2",
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
     "keywords": ["yii2", "shortcuts"],

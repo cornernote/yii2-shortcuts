@@ -1,3 +1,3 @@
 # Yii2 Shortcuts
 
-Shortcuts for Yii2
+Helper class with shortcuts for Yii2

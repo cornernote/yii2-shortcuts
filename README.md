@@ -1,3 +1,10 @@
-# Yii2 Shortcuts
+# Y
 
-Helper class with shortcuts for Yii2
+Shortcuts for [Yii framework](http://www.yiiframework.com) v2.*
+
+
+## Install
+
+### via Composer (recommended)
+
+`php composer.phar require cornernote/yii2-shortcuts '*'`

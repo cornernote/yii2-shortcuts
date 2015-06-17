@@ -3,6 +3,7 @@
 namespace cornernote\shortcuts;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * Class Y
@@ -110,7 +111,7 @@ class Y
      */
     static public function param($name, $defaultValue = null)
     {
-        return self::getValueByComplexKeyFromArray($name, Yii::$app->params, $defaultValue);
+        return ArrayHelper::getValue(Yii::$app->params, $name, $defaultValue);
     }
 
     /**
@@ -123,7 +124,7 @@ class Y
      */
     public static function GET($name, $defaultValue = null)
     {
-        return self::getValueByComplexKeyFromArray($name, $_GET, $defaultValue);
+        return ArrayHelper::getValue($_GET, $name, $defaultValue);
     }
 
     /**
@@ -136,7 +137,7 @@ class Y
      */
     public static function POST($name, $defaultValue = null)
     {
-        return self::getValueByComplexKeyFromArray($name, $_POST, $defaultValue);
+        return ArrayHelper::getValue($_POST, $name, $defaultValue);
     }
 
     /**
@@ -149,7 +150,7 @@ class Y
      */
     public static function FILES($name, $defaultValue = null)
     {
-        return self::getValueByComplexKeyFromArray($name, $_FILES, $defaultValue);
+        return ArrayHelper::getValue($_FILES, $name, $defaultValue);
     }
 
     /**
@@ -163,34 +164,6 @@ class Y
         return Yii::$app->request->getBaseUrl($absolute);
     }
 
-    /**
-     * Returns the array variable value or $defaultValue if the array variable does not exist
-     *
-     * @param string $key the array variable name (could be used dot delimiter for nested variable)
-     * Example: variable name 'Media.Foto.thumbsize' will return value at $array['Media']['Foto']['thumbsize']
-     * @param array $array an array containing variable to return
-     * @param mixed $defaultValue the default value to be returned when the array variable does not exist
-     * @return mixed
-     */
-    public static function getValueByComplexKeyFromArray($key, $array, $defaultValue = null)
-    {
-        if (strpos($key, '.') === false) {
-            return (isset($array[$key])) ? $array[$key] : $defaultValue;
-        }
-        $keys = explode('.', $key);
-        $firstKey = array_shift($keys);
-        if (!isset($array[$firstKey])) {
-            return $defaultValue;
-        }
-        $value = $array[$firstKey];
-        foreach ($keys as $k) {
-            if (!isset($value[$k]) && !array_key_exists($k, $value)) {
-                return $defaultValue;
-            }
-            $value = $value[$k];
-        }
-        return $value;
-    }
 }
 
 

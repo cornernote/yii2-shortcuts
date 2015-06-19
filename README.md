@@ -1,6 +1,6 @@
 # Y
 
-Shortcuts for [Yii framework](http://www.yiiframework.com) v2.*
+Helper class with shortcuts for Yii2.
 
 
 ## Installation

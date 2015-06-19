@@ -3,8 +3,20 @@
 Shortcuts for [Yii framework](http://www.yiiframework.com) v2.*
 
 
-## Install
+## Installation
 
-### via Composer (recommended)
+The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-`php composer.phar require cornernote/yii2-shortcuts '*'`
+Either run
+
+```
+$ composer require cornernote/yii2-shortcuts "*"
+```
+
+or add
+
+```
+"cornernote/yii2-shortcuts": "*"
+```
+
+to the `require` section of your `composer.json` file.

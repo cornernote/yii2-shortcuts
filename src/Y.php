@@ -52,6 +52,14 @@ class Y
     }
 
     /**
+     * @return \yii\console\Response|\yii\web\Response
+     */
+    static public function response()
+    {
+        return Yii::$app->getResponse();
+    }
+
+    /**
      * @param $name
      * @return null|\yii\base\Module
      */

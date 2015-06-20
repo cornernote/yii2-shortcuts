@@ -20,14 +20,6 @@ class Y
     }
 
     /**
-     * @return mixed|\yii\web\User
-     */
-    static public function user()
-    {
-        return Yii::$app->getUser();
-    }
-
-    /**
      * @return \yii\db\Connection
      */
     static public function db()
@@ -102,11 +94,25 @@ class Y
     }
 
     /**
-     * @return \yii\web\Session
+     * @return \yii\web\User|null
+     */
+    static public function user()
+    {
+        if (Yii::$app instanceof \yii\web\Application) {
+            return Yii::$app->getUser();
+        }
+        return null;
+    }
+    
+    /**
+     * @return \yii\web\Session|null
      */
     static public function session()
     {
-        return Yii::$app->getSession();
+        if (Yii::$app instanceof \yii\web\Application) {
+            return Yii::$app->getSession();
+        }
+        return null;
     }
 
     /**

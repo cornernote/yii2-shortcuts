@@ -98,21 +98,15 @@ class Y
      */
     static public function user()
     {
-        if (Yii::$app instanceof \yii\web\Application) {
-            return Yii::$app->getUser();
-        }
-        return null;
+        return Yii::$app instanceof \yii\web\Application ? Yii::$app->getUser() : null;
     }
-    
+
     /**
      * @return \yii\web\Session|null
      */
     static public function session()
     {
-        if (Yii::$app instanceof \yii\web\Application) {
-            return Yii::$app->getSession();
-        }
-        return null;
+        return Yii::$app instanceof \yii\web\Application ? Yii::$app->getSession() : null;
     }
 
     /**

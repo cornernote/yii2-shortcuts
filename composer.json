@@ -1,9 +1,9 @@
 {
     "name": "cornernote/yii2-shortcuts",
-    "description": "SHelper class with shortcuts for Yii2",
+    "description": "Helper class with shortcuts for Yii2.",
+    "keywords": ["yii2", "shortcuts"],
     "type": "yii2-extension",
     "license": "BSD-3-Clause",
-    "keywords": ["yii2", "shortcuts"],
     "authors": [
         {
             "name": "Brett O'Donnell",
@@ -11,9 +11,12 @@
             "homepage": "http://mrphp.com.au/"
         }
     ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
     "autoload": {
         "psr-4": {
-            "cornernote\\shortcuts\\": ""
+            "cornernote\\shortcuts\\": "src"
         }
     }
 }

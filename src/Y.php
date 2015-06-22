@@ -169,7 +169,8 @@ class Y
      */
     public static function baseUrl($absolute = false)
     {
-        return Yii::$app->request->getBaseUrl($absolute);
+        $request = Yii::$app->request;
+        return ($absolute ? $request->getHostInfo() : '') . $request->getBaseUrl($absolute);
     }
 
 }

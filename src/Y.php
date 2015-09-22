@@ -4,6 +4,7 @@ namespace cornernote\shortcuts;
 
 use Yii;
 use yii\helpers\ArrayHelper;
+use yii\web\AssetBundle;
 
 /**
  * Class Y
@@ -120,6 +121,15 @@ class Y
     static public function param($name, $defaultValue = null)
     {
         return ArrayHelper::getValue(Yii::$app->params, $name, $defaultValue);
+    }
+
+    /**
+     * @param string $name
+     * @return AssetBundle the registered asset bundle instance
+     */
+    static public function assetBundle($name = 'app\assets\AppAsset')
+    {
+        return Yii::$app->view->registerAssetBundle($name);
     }
 
     /**
